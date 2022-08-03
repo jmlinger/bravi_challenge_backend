@@ -18,7 +18,7 @@ module.exports = async (query) => {
 
   if (column === 'createdAt' || column === 'updatedAt') {
     const custList = await Models.customers.findAll();
-    console.log(custList);
+    console.log(moment(custList[0][column]).format('DD/MM/YYYY HH:mm'));
     const custListByDate = custList.filter(
       (cust) => moment(cust[column]).format('DD/MM/YYYY HH:mm').includes(string),
     );
