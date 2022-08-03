@@ -29,6 +29,18 @@ module.exports = {
         field: 'social_media_link',
         type: Sequelize.STRING,
       },
+      createdAt: {
+        allowNull: false,
+        field: 'created_at',
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('NOW()')
+      },
+      updatedAt: {
+        allowNull: false,
+        field: 'updated_at',
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('NOW()')
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
