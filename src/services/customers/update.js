@@ -8,7 +8,7 @@ const { registerValidation } = require('../../utils/validations/customers');
 
 module.exports = async (id, customer) => {
   const validationError = registerValidation(customer);
-  console.log(id, customer);
+
   if (validationError) {
       return INVALID_ENTRIES(validationError.message);
   }
