@@ -8,7 +8,7 @@ const remove = require('./remove');
 
 const router = express.Router({ mergeParams: true });
 
-router.get('/', rescue(list));
+router.get('/search', rescue(list));
 router.post('/', rescue(create));
 router.put('/:id', rescue(update));
 router.delete('/:id', rescue(remove));

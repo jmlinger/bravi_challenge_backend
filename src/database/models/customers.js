@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     whatsapp: DataTypes.STRING,
     socialMediaLink: DataTypes.STRING,
   }, 
-  { timestamps: false, tableName: 'customers', underscored: true });
+  { tableName: 'customers', underscored: true });
 
   return customers;
 };

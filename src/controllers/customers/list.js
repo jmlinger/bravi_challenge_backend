@@ -1,8 +1,8 @@
-const { StatusCodes } = require('http-status-codes');
-const Models = require('../../database/models');
- 
-module.exports = async (_req, res, _next) => {
-  const result = await Models.customers.findAll();
+const customersServices = require('../../services/customers');
 
-  return res.status(StatusCodes.OK).json(result);
+module.exports = async (req, res, _next) => {
+  const { query } = req;
+  const result = await customersServices.list(query);
+
+  return res.status(result.status).json(result.message);
 };
