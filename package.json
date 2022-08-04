@@ -7,7 +7,7 @@
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "start": "node .",
     "dev": "nodemon .",
-    "test": "mocha ./src/tests/**/*$NAME*.test.js --exit",
+    "test": "mocha ./src/tests/**/*$NAME*.test.js --timeout 10000",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "repository": {
@@ -29,12 +29,14 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "eslint": "^8.19.0",
     "eslint-config-trybe-backend": "^1.0.4",
     "eslint-plugin-sonarjs": "^0.13.0",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.18",
     "sequelize-cli": "^6.4.1",
+    "shelljs": "^0.8.5",
     "sinon": "^14.0.0"
   }
 }
