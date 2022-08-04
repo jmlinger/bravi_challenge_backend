@@ -23,5 +23,5 @@ module.exports = async (id, customer) => {
   
   const updatedCustomer = await Models.customers.findByPk(id);
 
-  return { status: StatusCodes.OK, message: updatedCustomer };
+  return { status: StatusCodes.CREATED, message: updatedCustomer };
 };

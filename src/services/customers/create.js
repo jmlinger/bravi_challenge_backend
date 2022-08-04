@@ -18,7 +18,7 @@ module.exports = async (customer) => {
       return ALREADY_REGISTERED;
   }
 
-  await Models.customers.create(customer);
+  const newCustomer = await Models.customers.create(customer);
 
-  return { status: StatusCodes.CREATED };
+  return { status: StatusCodes.CREATED, message: newCustomer };
 };
